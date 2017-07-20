@@ -1,6 +1,6 @@
 var express = require('express')
 var router = express.Router()
-var db = require('../db')
+var db = require('./db')
 
 router.get('/', function(req, res) {
     res.render('index', { hi: 'Hello World!' })
@@ -19,8 +19,8 @@ router.get('/', function(req, res) {
 //     res.render('index', { hi: 'Hello World!' })
 // })
 router.get('/orders/:id', function(req, res) {
-    const id = number(req.params.id)
-    getOrder(id, (req.app.get('connection')))
+    const id = req.params.id
+    db.getOrder(id, (req.app.get('connection')))
         .then(function(orderinfo) {
             res.render('/orders/view', { orderinfo: orderinfo[0] })
         })
