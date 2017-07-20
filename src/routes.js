@@ -22,7 +22,7 @@ router.get('/orders/:id', function(req, res) {
     const id = number(req.params.id)
     getOrder(id, (req.app.get('connection')))
         .then(function(orderinfo) {
-            res.render('orders/view', { orderinfo: orderinfo[0] })
+            res.render('/orders/view', { orderinfo: orderinfo[0] })
         })
         .catch(function(err) {
             res.status(500).send('Database Error', err.message)
