@@ -4,9 +4,12 @@ exports.seed = function(knex, Promise) {
         .then(function() {
             // Inserts seed entries
             return knex('table_name').insert([
-                { id: 1, Name: 'Goliath Anderson', address: '21 Monggomer st', email: 'dark&stormy@longisland.com', delivery: false, status: '' },
-                { id: 2, colName: 'Peter GRiffin', address: '72 Grogg Lane', email: 'Groggy@bigd.com', delivery: false, status: '' },
-                { id: 3, colName: 'Nickel Sahma', address: '69 Virgina Beach', email: 'virgin@beach.com', delivery: false, status: '' }
+                { id: 1, type: 'Dark and Stormy', quantity: 2, size: 'small', order_id: 1 },
+                { id: 2, type: 'Virgin on the Beach', quantity: 1, size: 'small', order_id: 1 },
+                { id: 3, type: 'Grogg', quantity: 6, size: 'medium', order_id: 1 },
+                { id: 4, type: 'Ginger Whipp', quantity: 2, size: 'small', order_id: 2 },
+                { id: 5, type: 'Dark and Stormy', quantity: 5, size: 'large', order_id: 3 },
+                { id: 6, type: 'Virgin on the Beach', quantity: 1, size: 'large', order_id: 3 }
             ]);
         });
 };
