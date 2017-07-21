@@ -4,7 +4,11 @@ exports.up = function(knex, Promise) {
         table.string('name')
         table.string('address')
         table.string('email')
+<<<<<<< HEAD
         table.timestamp('created at')
+=======
+        table.timestamps('created at')
+>>>>>>> database-part2
         table.boolean('delivery')
         table.string('status')
     })
